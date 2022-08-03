@@ -1,0 +1,218 @@
+A)Recursion
+
+WHEN USED:
+ when we do not know how many loops we need as in
+ tree & graph traversing
+ 
+
+PROS:
+ dry
+ readable
+
+CONS:
+ more memory space can lead to stack over flow
+=============================================================
+B)SORTING ALGORITHMS
+
+1)BUBBLE SORT
+
+Idea:
+   compare every two adjacent elements and bubble the bigest 
+   to the end
+
+Time complexity:
+best    worst
+O(n)    O(n^2)
+
+Space complexity:
+in place algorithm O(1)
+no need for creating another data structure
+
+When used?
+rarely use, its for teaching purpose
+---------------------------------------------------------------
+2)SELECTION SORT
+
+Idea:
+   find the index of the minimum value then swap this value with 
+   the first item, then with the second item, third ...
+
+Time complexity:
+best     worst
+O(n^2)   O(n^2)
+
+Space complexity:
+in place O(1)
+
+When used?
+rarely use, its only for teaching purpose
+------------------------------------------------------------------
+3)INSERTION SORT
+
+Idea:
+    loop throgh and catch every item, then compare it with all the
+    previous items, if less swap
+
+Time complexity:
+best    worst
+O(n)    O(n^2)
+
+Space complexity:
+in place O(1)
+
+When used?
+  its the best choice for small data and sorted data
+--------------------------------------------------------------------
+4)MERGE SORT
+
+Idea:
+   two functions, the first divide the array to 2 halfs and then merge 
+   them in sorted order. the second function recursively call itself at 
+   each call takes different start, end untill start becomes !< end
+   at the end of it, it call the first functon to merge all theses in
+   sorted order
+
+Time complexity:
+best     worst
+nlogn    nlogn
+
+Space complexity:
+O(n) 
+use another space of memory rather than the size of array
+
+When used?
+  the best choice if we dont care about space complexity 
+---------------------------------------------------------------------------
+5)QUICK SORT
+
+Idea:
+   two functions, the first return int, catch random item "pivot" and create 2 pointers 
+   one on the start, one on the end, compare the pivot with all items to put
+   smaller items on the left of the pivot, bigger items on the right
+   the second items takes the array, start, end, recursively call itself, at 
+   each call calculate pivote by calling the first fuction untill start !< end
+
+Time complexity:
+best     worst
+nlogn    n^2  "if the pivote randomly was the biggest or smallest item, so it will never comes to the middle"
+
+Space complexity:
+O(log n) as it only starts to divide when pivote is in the middle
+
+When used?
+  the best choice when we care about space complexity
+  but if we care about the time complexity worst case, we use merge sort
+  merge & quick sort are the most using
+
+  practically its the best over merge & heap sort why?
+  because quick sort does the least times of swaps
+  swaps consume more time
+  quick sort worst case is not the big matter, because we can avoid it by
+  improving pivot choose, so its faster (least swaps), and better space complexity over the others
+----------------------------------------------------------------------------------------------------
+6)HEAP SORT
+
+Idea:
+   deal with the array as if its a binary heap, by somesimple equations we can determine the left 
+   and right node for each item, so converting the array to max or min heap then rearrange the items
+   on this base
+
+Time complexity:
+best    worst
+nlogn   nlogn
+
+Space complexity:
+O(1) in place
+
+When used?
+  very good time & space complexity but generally slower than merge & quick sort
+
+======================================================================================================
+C)SEARCHING ALGORITHMS
+
+1)LINEAR SEARCH
+
+Design strategy:
+iterative algorithm
+
+Time complexity:
+best   worst
+O(1)   O(n)
+
+Space complexity:
+O(1) in place
+
+When used? (pros)
+  small unsorted data
+
+Cons:
+  too slow with big data
+----------------------------------------
+
+2)BINARY SEARCH
+
+Design strategy:
+divide and conquer
+
+Time complexity:
+best    worst
+O(1)    O(log n)
+
+Space complexity:
+O(1) in place
+
+When used? (pros)
+   very big sorted data
+
+Cons:
+   need the data to be sorted
+--------------------------------------------------------------------------
+(FOR TREE & GRAPH), its traversal more than search
+
+3)BREADTH FIRST SEARCH 
+
+Design strategy:
+iterative algorithm
+
+Time complexity:
+best    worst
+O(n)    O(n)
+
+Space complexity:
+O(n) use queue
+
+when used?
+ find the shortest path to a node 
+
+Cons:
+ use more memory
+----------------------------------------------------------------------------
+(FOR TREE & GRAPH), its traversal more than search
+
+4)DEPTH FIRST SEARCH
+
+Design strategy:
+recursive algorithm
+
+Time complexity:
+best      worst
+O(log n)  O(n)
+
+Space complexity:
+O(depth) on search
+O(n) on traverse
+
+When used?
+  determine wether a pass between nodes exists or not
+
+Cons:
+  slow
+============================================================================
+SHORTEST PATH ALGORITHM
+5)BELLMAN FORD
+  time complexity in worst case O(n^2)
+  best use when there is negative values in weighted graph
+
+6)DIJKESTRA 
+  time complexity is slightly better than bellman ford
+  best use if no negative values
